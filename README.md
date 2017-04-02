@@ -5,7 +5,7 @@
 A Visual Basic script that does two impossible things. 
 
 1. Add attachments to a mail merge.
-2. Change the sender on an Exchange account. 
+2. Change the sender on a mail merge batch, sender must have delegate rights. This is helpful to send from a Generic Mailbox, which your computer support department told you was impossible. It's not and you can do it now! 
 
 Mail merge is a useful tool, but it neglects several features that are often necessary when sneding a mail merge. Those features are the ability to add attachments, as well as to allow delegates to send the FROM option. 
 
@@ -24,7 +24,7 @@ Outlook 2013 and onward (probably backwards compatible all the way until 2003).
 
 ## Error Suppression 
 
-In Outlook 2013, it has been noted that some security settings may prevent the script from running correctly. To fix this try the following: launch Outlook as admin see here: [http://www.msoutlook.info/question/353]
+In Outlook 2013, it has been noted that some security settings may prevent the script from running correctly. To fix this try the following: launch Outlook as admin see here: (http://www.msoutlook.info/question/353)
 Shift right-click should allow you to run as admin. Then you can go to File > Options> Trust Center > Trust Center Settings > Programmatic Access > Never Warm me about suspicious activity. That same dialog will tell you if anti-virus is valid, and if it is we’re fine there. 
 
 Make sure Windows firewall is turned ON. 

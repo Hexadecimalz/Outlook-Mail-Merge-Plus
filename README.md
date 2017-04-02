@@ -1,4 +1,4 @@
-# Outlook Mail Merge Plus
+# ![ommplogo](https://cloud.githubusercontent.com/assets/15161168/24591436/4a2e9204-17be-11e7-8ae7-83b682617bd6.png) Outlook Mail Merge Plus
 
 ## Synopsis 
 

@@ -11,12 +11,12 @@ Mail merge is a useful tool, but it neglects several features that are often nec
 
 ## Usage 
 
-1 Put Outlook in OFFLINE mode. Send/Receive Tab "Press Offline Mode".
-2 Run through your mail merge completely, all messages should stick in the Outbox. 
-3 Run the .VBS Script. 
-4 Add Attachments. 
-5 Change the Sender if desired. 
-6 Check that the items in the Outboox look like what you want to send. 
+1. Put Outlook in OFFLINE mode. Send/Receive Tab "Press Offline Mode".
+2. Run through your mail merge completely, all messages should stick in the Outbox. 
+3. Run the .VBS Script. 
+4. Add Attachments. 
+5. Change the Sender if desired. 
+6. Check that the items in the Outboox look like what you want to send. 
 
 ## Compatibility 
 

@@ -31,7 +31,7 @@ Make sure Windows firewall is turned ON.
 
 ## Contributors 
 
-- Wooter Westerveld, Lead Developer[OMMA]{http://omma.sourceforge.net}
+- Wooter Westerveld, Lead Developer [OMMA]{http://omma.sourceforge.net}
 - Hexadecimalz
 
 ## Issues 

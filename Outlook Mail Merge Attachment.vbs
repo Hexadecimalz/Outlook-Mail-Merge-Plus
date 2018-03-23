@@ -39,7 +39,7 @@ Sub SubOutlookMailMergeAttachment
 	strProgamName = "Outlook Mail Merge Attachment (v1.1.9 Beta)"
 	strProgamVersion = "Outlook Mail Merge Attachment (v1.1.9 Beta)"	
 	
-	' Set manual line-breaks in message box texts for windoes versions < 6.
+	' Set manual line-breaks in message box texts for Windows versions < 6.
 	strBoxCr = vbCrLf
 	On Error Resume Next
 	Set SystemSet = GetObject("winmgmts:").InstancesOf ("Win32_OperatingSystem") 	
@@ -156,7 +156,20 @@ Sub SubOutlookMailMergeAttachment
 		Msgbox "Okay, the message will be sent with the default e-mail."
     End If
 	
+	' Add CC field 
+	intCCfield = _
+    Msgbox("Would you like to CC a contact?", _
+        vbYesNo)
+		
+	'If the User said yes, then set the var for changing, and if not proceed.	
+    If intCCfield = vbYes Then
+		strUserCC = InputBox( "Enter the e-mail you want to CC: " )
+    Else
+		Msgbox "Okay, no CC is added."
+    End If
+	
 	' Do you REALLY want to add an attachment? If not, that is okay. 
+	
     intAttachment = _
     Msgbox("Would you like to add an attachment to this mail merge?", _
         vbYesNo)
@@ -167,7 +180,9 @@ Sub SubOutlookMailMergeAttachment
     '''''''''''''''''''''''''''''''''''''''''''''''         
     ' Ask user to open a file
     ' Select the attachment filename 
-    
+	
+	if intAttachment = vbYes Then 
+ 
 	ObjWord.ChangeFileOpenDirectory(CreateObject("Wscript.Shell").SpecialFolders("Desktop"))	
 	ObjWord.FileDialog(msoFileDialogOpen).Title = "Attach file(s)..."
 	ObjWord.FileDialog(msoFileDialogOpen).AllowMultiSelect = True
@@ -185,17 +200,22 @@ Sub SubOutlookMailMergeAttachment
 		Exit Sub   	
 	End If 
 	
+	End If 
+	
     WScript.Sleep(800)               
         
     ' Add the attachment to each email
     For Each Item In box.Items        
     	For Each objFile in ObjWord.FileDialog(1).SelectedItems
-        	If intAttachment = 1 then 
-			  Item.Attachments.Add(objFile)
-			 End If
+			If intAttachment = vbYes Then
+			Item.Attachments.Add(objFile)
+			End If 
 			If intChangeSender = vbYes then 
-            Item.SentOnBehalfOfName = strUserEmail 			
-			  End If 
+            Item.SentOnBehalfOfName = strUserEmail
+			End If
+			If intCCfield = vbYes then
+			Item.CC = strUserCC
+			End If 
         Next             
         Item.Save
     Next 
